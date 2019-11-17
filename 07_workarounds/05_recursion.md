@@ -49,5 +49,5 @@ to make `recursive` into a non-`async` function which returns a `.boxed()`
 `async` block:
 
 ```rust
-{{#include ../../examples/07_05_recursion/src/lib.rs:example}}
+{{#include ../examples/07_05_recursion/src/lib.rs:example}}
 ```

@@ -9,21 +9,21 @@ the resulting `async-await-echo` folder.
 Let's add some dependencies to the `Cargo.toml` file:
 
 ```toml
-{{#include ../../examples/01_05_http_server/Cargo.toml:9:18}}
+{{#include ../examples/01_05_http_server/Cargo.toml:9:18}}
 ```
 
 Now that we've got our dependencies out of the way, let's start writing some
 code. We have some imports to add:
 
 ```rust
-{{#include ../../examples/01_05_http_server/src/lib.rs:imports}}
+{{#include ../examples/01_05_http_server/src/lib.rs:imports}}
 ```
 
 Once the imports are out of the way, we can start putting together the
 boilerplate to allow us to serve requests:
 
 ```rust
-{{#include ../../examples/01_05_http_server/src/lib.rs:boilerplate}}
+{{#include ../examples/01_05_http_server/src/lib.rs:boilerplate}}
 ```
 
 If you `cargo run` now, you should see the message "Listening on
@@ -48,14 +48,14 @@ request to another website using Hyper's HTTP client.
 We start by parsing out the URL we want to request:
 
 ```rust
-{{#include ../../examples/01_05_http_server/src/lib.rs:parse_url}}
+{{#include ../examples/01_05_http_server/src/lib.rs:parse_url}}
 ```
 
 Then we can create a new `hyper::Client` and use it to make a `GET` request,
 returning the response to the user:
 
 ```rust
-{{#include ../../examples/01_05_http_server/src/lib.rs:get_request}}
+{{#include ../examples/01_05_http_server/src/lib.rs:get_request}}
 ```
 
 `Client::get` returns a `hyper::client::FutureResponse`, which implements

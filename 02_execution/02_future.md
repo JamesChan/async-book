@@ -6,7 +6,7 @@ A `Future` is an asynchronous computation that can produce a value
 the future trait might look something like this:
 
 ```rust
-{{#include ../../examples/02_02_future_trait/src/lib.rs:simple_future}}
+{{#include ../examples/02_02_future_trait/src/lib.rs:simple_future}}
 ```
 
 Futures can be advanced by calling the `poll` function, which will drive the
@@ -31,7 +31,7 @@ which will tell the executor that our future is ready to make progress.
 A simple `SocketRead` future might look something like this:
 
 ```rust
-{{#include ../../examples/02_02_future_trait/src/lib.rs:socket_read}}
+{{#include ../examples/02_02_future_trait/src/lib.rs:socket_read}}
 ```
 
 This model of `Future`s allows for composing together multiple asynchronous
@@ -40,7 +40,7 @@ at once or chaining futures together can be implemented via allocation-free
 state machines, like this:
 
 ```rust
-{{#include ../../examples/02_02_future_trait/src/lib.rs:join}}
+{{#include ../examples/02_02_future_trait/src/lib.rs:join}}
 ```
 
 This shows how multiple futures can be run simultaneously without needing
@@ -48,7 +48,7 @@ separate allocations, allowing for more efficient asynchronous programs.
 Similarly, multiple sequential futures can be run one after another, like this:
 
 ```rust
-{{#include ../../examples/02_02_future_trait/src/lib.rs:and_then}}
+{{#include ../examples/02_02_future_trait/src/lib.rs:and_then}}
 ```
 
 These examples show how the `Future` trait can be used to express asynchronous
@@ -57,7 +57,7 @@ callbacks. With the basic control-flow out of the way, let's talk about the
 real `Future` trait and how it is different.
 
 ```rust
-{{#include ../../examples/02_02_future_trait/src/lib.rs:real_future}}
+{{#include ../examples/02_02_future_trait/src/lib.rs:real_future}}
 ```
 
 The first change you'll notice is that our `self` type is no longer `&mut self`,

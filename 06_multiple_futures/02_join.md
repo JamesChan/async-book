@@ -9,7 +9,7 @@ When performing multiple asynchronous operations, it's tempting to simply
 `.await` them in a series:
 
 ```rust
-{{#include ../../examples/06_02_join/src/lib.rs:naiive}}
+{{#include ../examples/06_02_join/src/lib.rs:naiive}}
 ```
 
 However, this will be slower than necessary, since it won't start trying to
@@ -19,7 +19,7 @@ run concurrently by first calling the each `async fn` to start the futures,
 and then awaiting them both:
 
 ```rust
-{{#include ../../examples/06_02_join/src/lib.rs:other_langs}}
+{{#include ../examples/06_02_join/src/lib.rs:other_langs}}
 ```
 
 However, Rust futures won't do any work until they're actively `.await`ed.
@@ -29,7 +29,7 @@ concurrently. To correctly run the two futures concurrently, use
 `futures::join!`:
 
 ```rust
-{{#include ../../examples/06_02_join/src/lib.rs:join}}
+{{#include ../examples/06_02_join/src/lib.rs:join}}
 ```
 
 The value returned by `join!` is a tuple containing the output of each
@@ -46,7 +46,7 @@ Unlike `join!`, `try_join!` will complete immediately if one of the subfutures
 returns an error.
 
 ```rust
-{{#include ../../examples/06_02_join/src/lib.rs:try_join}}
+{{#include ../examples/06_02_join/src/lib.rs:try_join}}
 ```
 
 Note that the futures passed to `try_join!` must all have the same error type.
@@ -54,5 +54,5 @@ Consider using the `.map_err(|e| ...)` and `.err_into()` functions from
 `futures::future::TryFutureExt` to consolidate the error types:
 
 ```rust
-{{#include ../../examples/06_02_join/src/lib.rs:try_join_map_err}}
+{{#include ../examples/06_02_join/src/lib.rs:try_join_map_err}}
 ```

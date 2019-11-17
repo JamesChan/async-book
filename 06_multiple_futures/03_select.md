@@ -4,7 +4,7 @@ The `futures::select` macro runs multiple futures simultaneously, allowing
 the user to respond as soon as any future completes.
 
 ```rust
-{{#include ../../examples/06_03_select/src/lib.rs:example}}
+{{#include ../examples/06_03_select/src/lib.rs:example}}
 ```
 
 The function above will run both `t1` and `t2` concurrently. When either
@@ -28,7 +28,7 @@ being `select`ed over have completed and will no longer make progress.
 This is often handy when looping over a `select!`.
 
 ```rust
-{{#include ../../examples/06_03_select/src/lib.rs:default_and_complete}}
+{{#include ../examples/06_03_select/src/lib.rs:default_and_complete}}
 ```
 
 ## Interaction with `Unpin` and `FusedFuture`
@@ -59,7 +59,7 @@ will yield `FusedFuture` futures from their
 `.next()` / `.try_next()` combinators.
 
 ```rust
-{{#include ../../examples/06_03_select/src/lib.rs:fused_stream}}
+{{#include ../examples/06_03_select/src/lib.rs:fused_stream}}
 ```
 
 ## Concurrent tasks in a `select` loop with `Fuse` and `FuturesUnordered`
@@ -76,7 +76,7 @@ used with `select` to only run the branch for `Some(_)` values
 returned from the stream, ignoring `None`s.
 
 ```rust
-{{#include ../../examples/06_03_select/src/lib.rs:fuse_terminated}}
+{{#include ../examples/06_03_select/src/lib.rs:fuse_terminated}}
 ```
 
 When many copies of the same future need to be run simultaneously,
@@ -86,5 +86,5 @@ to completion, rather than aborting them when a new one is created.
 It will also print out a value returned by `run_on_new_num_fut`.
 
 ```rust
-{{#include ../../examples/06_03_select/src/lib.rs:futures_unordered}}
+{{#include ../examples/06_03_select/src/lib.rs:futures_unordered}}
 ```
