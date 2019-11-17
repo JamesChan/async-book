@@ -1,3 +1,13 @@
+2019-11-17: refactoring for gitdoc
+
+building now using the following instead of change before
+
+mdbook build ./gitdoc
+
+IMPORTANTLY: NOW I can use gitbook editor to edit this repo in the root directory
+
+___
+
 # async-book
 Asynchronous Programming in Rust
 
